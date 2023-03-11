@@ -1,10 +1,9 @@
 // what is a promise?
 // in google, when searching for something, it tells the google servers we need cats and dogs
-
 // servers always give us a promise, in the future it returns something. It returns a promise
-// when things aren't in our control in front end.
+// when things aren't in our control in front end, we can make requests hoping that the server keeps its promises and returns something
 
-// Only three outcomes, either you recieve what you are promised after sometime or you don't get it at all
+// Only three outcomes, either you receive what you are promised after sometime or you don't get it at all
 // the third outcome is, you can get some other unexpected output as a promise.
 
 
@@ -18,7 +17,7 @@ const myPromise = new Promise((resolve, reject) => {
         //resolve("<h1>HELLLOOOO</h1>");
         reject('we could not find the data')
     }, 2000)
-        // resolve is success state,  reject is 
+        // resolve and reject are almost the same thing. You get what you need and you can resolve or reject the data
 });
 console.log(myPromise); // by default, a pr
 
