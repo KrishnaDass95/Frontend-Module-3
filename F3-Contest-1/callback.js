@@ -19,12 +19,13 @@ function openingCeremony(callback){
 }
 
 function Race100M(scores, callback){
+    // callback == LongJump
     setTimeout(()=>{
         let raceTimes = {
-            redTime : randomIntInterval(10, 15),
-            blueTime : randomIntInterval(10, 15),
-            greenTime : randomIntInterval(10, 15),
-            yellowTime : randomIntInterval(10, 15)
+            red : randomIntInterval(10, 15),
+            blue : randomIntInterval(10, 15),
+            green : randomIntInterval(10, 15),
+            yellow : randomIntInterval(10, 15)
         }
 
         let fastestTime = Number.MAX_SAFE_INTEGER;
@@ -48,11 +49,39 @@ function Race100M(scores, callback){
 
         scores[fastestKey] = 50;
         scores[secondFastestKey] = 25;
-        console.log(scores);
+        console.log("scores after 100M", scores);
         // find out the two least times and add it to scores obj
+        callback(scores, HighJump);
     }, 3000)
+    
+
 }
-function LongJump(){
+function LongJump(scores, callback){
+    // callback == HighJump
+    setTimeout(()=>{
+        let longJumpWinner = Math.floor(Math.random() * 4);
+        // console.log('longJump', longJumpWinner);
+        if(longJumpWinner == 0){
+            scores['red'] += 150;
+        }
+        else if(longJumpWinner == 1){
+            scores['blue'] += 150;
+        }
+        else if(longJumpWinner == 2){
+            scores['green'] += 150;
+        }
+        else{
+            scores['yellow'] += 150;
+        }
+        console.log("scores after long jump", scores);
+    }, 2000);
+    callback(scores, AwardCeremony);
+}
+
+function HighJump(scores, callback){
+
+}
+function AwardCeremony(){
 
 }
 
