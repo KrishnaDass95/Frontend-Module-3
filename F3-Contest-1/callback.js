@@ -74,11 +74,31 @@ function LongJump(scores, callback){
             scores['yellow'] += 150;
         }
         console.log("scores after long jump", scores);
+        callback(scores, AwardCeremony);
     }, 2000);
-    callback(scores, AwardCeremony);
+    
 }
 
 function HighJump(scores, callback){
+    let highJumpWinnerPrompt = prompt('What color secured the highest jump?');
+    let winner = highJumpWinnerPrompt.toLowerCase();
+    console.log(winner);
+    if(winner == 'red'){
+        scores['red'] += 100;
+    }
+    else if(winner == 'blue'){
+        scores['blue'] += 100;
+    }
+    else if(winner == 'green'){
+        scores['green'] += 100;
+    }
+    else if(winner == 'yellow'){
+        scores['yellow'] += 100;
+    }
+    else{
+        console.log('Event was cancelled');
+    }
+    console.log('scores after high jump', scores);
 
 }
 function AwardCeremony(){
