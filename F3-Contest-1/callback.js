@@ -80,9 +80,9 @@ function LongJump(scores, callback){
 }
 
 function HighJump(scores, callback){
+    // callback == AwardCeremony
     let highJumpWinnerPrompt = prompt('What color secured the highest jump?');
     let winner = highJumpWinnerPrompt.toLowerCase();
-    console.log(winner);
     if(winner == 'red'){
         scores['red'] += 100;
     }
@@ -95,18 +95,20 @@ function HighJump(scores, callback){
     else if(winner == 'yellow'){
         scores['yellow'] += 100;
     }
-    else{
+    else if(winner == null || winner == ''){
         console.log('Event was cancelled');
     }
     console.log('scores after high jump', scores);
+    callback(scores)
+}
+function AwardCeremony(scores){
+    const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+    // console.log(sorted);
+    console.log(`${sorted[0][0]} came first with ${sorted[0][1]} score`);
+    console.log(`${sorted[1][0]} came second with ${sorted[1][1]} score`);
+    console.log(`${sorted[2][0]} came third with ${sorted[1][1]} score`);
 
 }
-function AwardCeremony(){
-
-}
-
-
-
 
 
 // final function call
