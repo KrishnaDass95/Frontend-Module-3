@@ -106,7 +106,7 @@ function AwardCeremony(scores){
     // console.log(sorted);
     console.log(`${sorted[0][0]} came first with ${sorted[0][1]} score`);
     console.log(`${sorted[1][0]} came second with ${sorted[1][1]} score`);
-    console.log(`${sorted[2][0]} came third with ${sorted[1][1]} score`);
+    console.log(`${sorted[2][0]} came third with ${sorted[2][1]} score`);
 
 }
 

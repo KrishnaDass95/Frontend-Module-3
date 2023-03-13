@@ -33,3 +33,16 @@
 //     document.getElementById('container').innerHTML = e;
 //     document.getElementById('container').style.color = 'red';
 // })
+
+// Promise chaining -
+function myPromise(){
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve('promise resolved')
+        }, 1000);
+    })
+}
+
+myPromise().then((res)=>{
+    console.log('res', res);
+})
