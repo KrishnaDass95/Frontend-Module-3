@@ -18,4 +18,9 @@ const data = fetch('https://dummyjson.com/quotes/random').then((res)=>res.json()
     document.getElementById('container').innerHTML = `<h1>${data.quote}</h1>`;
 });
 
+// get a json in an array and then show it on the DOM
+// all apis response can be an array or an object. Make sure you always console.log to check what that API is giving you
+
+// Handling errors
+// Having just a single catch at the end of a promise chain will be enough to catch the errors anywhere and it will break the code execution there
 
