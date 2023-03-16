@@ -13,8 +13,16 @@ async function getData() {
     if(response.ok){
         console.log('response', response);
         const data = await response.json(); // .json() is a function is something that returns a promise
-        console.log('data', data);
-        showData(data)
+        const quotes = data.quotes;
+        const myHtml = quotes.map((item)=>{
+            return `
+            <div class='quote-box'>
+                <h2>${item.id}. ${item.author}</h2>
+                <p>${item.quote}</p>
+            </div>
+            `
+        })
+        document.getElementById('container').innerHTML = myHtml.join('');
     }
 }
 getData();

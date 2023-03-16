@@ -38,6 +38,7 @@ function takePayment(){
 
 // now the code is not running parallely like before,we can stop the flow of the code
 // and it will run nicely
+// inside the function JS will run synchronously 
 async function handleChainOfPromises(){
     console.log('handling..', new Date());
     const res1 = await takeOrder();
