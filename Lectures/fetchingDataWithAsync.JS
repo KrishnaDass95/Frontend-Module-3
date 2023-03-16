@@ -8,9 +8,11 @@ console.log('fetching with async');
 
 // lets convert the above fetch code and promise chaining with async function using await
 async function getData() {
+    document.getElementById('loading').style.display = 'flex';
     console.log('getting data');
     const response = await fetch('https://dummyjson.com/quotes'); // await only works inside the async defined function
     if(response.ok){
+        document.getElementById('loading').style.display = 'none';
         console.log('response', response);
         const data = await response.json(); // .json() is a function is something that returns a promise
         const quotes = data.quotes;
@@ -31,3 +33,8 @@ getData();
  function showData(data){
     // DOM manipulation can be done here
 }
+
+
+// TODO a loading screen
+// you need create the HTML element first, hide it with display none
+// once you get the data, make the display none
