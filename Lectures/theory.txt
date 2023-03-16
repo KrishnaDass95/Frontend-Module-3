@@ -1,0 +1,41 @@
+1. JS engine -> is a software to run JS
+A language is a bunch of instructions, 
+Before vscode, to run a language on your machine you need to use software which allows you run code in different engines
+JS engine helps you run JS code. It teaches your computer to understand your JS code
+its a translator to convert the code we write so the computer understands
+document.getElementById(), these keywords are given by the browser to add more functionality to JS engine
+
+
+2. Web browser ->An application to access websites, it connects to internet, browser retrieves files from a web server and 
+then displays it on the user screen
+
+3. Nothing in the internet is magic, it's all built on top of the internet.
+
+4. call stack - 
+call stack always tries to finish everything in pending asap
+call stack is a manager, assigns work. Go line by line and allocate tasks
+time, tide and JS does not wait for no one. Call stack makes it run fast
+when you have multiple scripts in the HTML document, it adds the script to call stack 
+call task gives the task to other tasks and then they go to do their own thing
+
+4. Async tasks that make the call stack interesting
+
+5. WEB API's take the load of the callstack
+The super powers given to JS engine by browser is web api's, example ->
+setTimeout, fetch(), DOM manipulation, web storage API(cookies), geolocation, 
+console,
+
+4. setTimeout function takes the timer, sends its task to task queue
+
+5. There's a event loop is always running and listening, which moves things from task queuee and microtask to call stack
+
+6. DOM, addeventListener, -> it will stay for the entirety of the websites life till its open
+it moves from web api section to task queue and then the event loop puts it into the call stack
+
+7. task queue is also called callback queue, when you spam a button, the callback function keeps getting called and it keeps adding it to callstack
+
+8. microtask vs task queue -> microtask queue has promises and its callback function  and event loop generally picks up the microtask queue as it has higher priority
+
+9. promise call back functions have priority as they always go to 
+
+10. storage heap -> all the memory of all our variables and functions all get stored in memory, like google chrome with a lot of tabs take resources on our computer and
