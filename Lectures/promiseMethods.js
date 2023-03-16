@@ -1,5 +1,8 @@
 console.log('promise Methods');
 
+// Here we have three promises being returned, so promise methods let us handle the way the promises
+
+
 let promise1 = new Promise((resolve, reject) => {
     setTimeout(()=>{
         resolve('promise1');
@@ -39,7 +42,7 @@ let promise3 = new Promise((resolve, reject) => {
 
 
 // Lets go through all Promise methods
-// Method 1 of PromiseMethods
+// Method 1 of PromiseMethods - ALL
 
 // In real life we will be handling a lot of promises, above is inefficient
 // in FB, when we login, everything loads as FB client is making calls to backend to display all the user info
