@@ -1,4 +1,5 @@
 // Time and Tide and JS waits for no one.
+// async await helps with code control
 console.log('async');
 // Handling Promises using Async Await
 
