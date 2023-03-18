@@ -24,7 +24,8 @@ function PromiseAPI1(){
                             `
                         });
                         postsTable.innerHTML += tableRows.join('');
-                    })
+                        resolve(true);
+                    }).catch(e => reject('error', e))
         })
     })
 
@@ -49,7 +50,8 @@ function PromiseAPI2(){
                             `
                         })
                         productsTable.innerHTML += productsArray.join('');
-                    })
+                        resolve(true);
+                    }).catch(e => reject('error from Promise 2', e));
         }, 2000)
     })
 
@@ -75,16 +77,19 @@ function PromiseAPI3(){
                             `
                         })
                         todoTable.innerHTML += todoAddArray.join('');
-                    })
+                        resolve(true);
+                    }).catch((error) => reject('error from Promise 3', error));
         }, 3000)
     })
 }
 
 function handlePromiseChain(){
-    // PromiseAPI1();
-    // PromiseAPI2();
-    PromiseAPI3();
-    
+    PromiseAPI1()
+        .then(()=> PromiseAPI2())
+        .then(()=> PromiseAPI3())
+        .catch((error) => console.log('error in Promise chaining'));
 }
 
 fetchDataBtn.addEventListener('click', handlePromiseChain);
+
+// Left to do -> promise chaining and resolve(true) and beautifying
