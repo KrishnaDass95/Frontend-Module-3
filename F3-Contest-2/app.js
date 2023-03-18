@@ -1,43 +1,17 @@
-const { resolve } = require("path");
-
-// console.log('promise chaining');
-const promiseButton = document.querySelector('#btn');
+// Elements
+const fetchDataBtn = document.querySelector('#btn');
+const table = document.querySelector('#data-table');
 
 function PromiseAPI1(){
-    return new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            const data = fetch('https://dummyjson.com/posts');
-            if(data){
-                resolve(data);
-            }
-            else{
-                reject('posts data not available')
-            }
-        }, 1000)
-    })
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=> {
+            fetch('https://dummyjson.com/posts')
+                .then((response)=> response.json())
+                    .then((data) => {
+                        console.log(data);
+                    })
 
-
-}
-
-function PromiseAPI2(){
-    return new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            const data = fetch('https://dummyjson.com/products');
-            if(data){
-                resolve(data);
-            }
-            else{
-                reject('products data not available')
-            }
-        }, 2000)
-    })
-
-
-}
-
-function PromiseAPI3(){
-    return new Promise((resolve, reject)=?{
-
+        })
     })
 
 
@@ -45,11 +19,15 @@ function PromiseAPI3(){
 
 
 
-// build the promise chain using async function
-function buildPromiseChain(){
 
+
+
+
+
+
+
+function handlePromiseChain(){
+    PromiseAPI1()
 }
 
-
-
-promiseButton.addEventListener('click', buildPromiseChain);
+fetchDataBtn.addEventListener('click', handlePromiseChain);
