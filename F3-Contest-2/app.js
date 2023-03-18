@@ -3,6 +3,7 @@ const fetchDataBtn = document.querySelector('#btn');
 const postsTable = document.querySelector('#posts');
 const productsTable = document.querySelector('#products');
 const todoTable = document.querySelector('#todos');
+const h1Element = document.getElementsByTagName('h1');
 
 function PromiseAPI1(){
     return new Promise((resolve, reject)=>{
