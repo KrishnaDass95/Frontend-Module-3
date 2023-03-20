@@ -27,7 +27,7 @@ class User {
 }
 
 let user1 = new User('krishna', 'email','2121', 'kdkdd', 'asdaddsda');
-console.log(us`r1.getName);
+console.log(user1.getName);
 user1.setHobbies = 'guitar playing';
 console.log(user1.setHobbies);
 
