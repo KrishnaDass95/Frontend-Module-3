@@ -39,10 +39,14 @@ console.log('private variable using a public function to retrieve it', myAccount
 class Person {
     constructor(name){
         this.name = name;
+        this.species = 'human'
     }
     // method to return the the name of person
     toString(){
         return `The name of the person is ${this.name}`;
+    }
+    speak(){
+        return 'person speaking in native language';
     }
 }
 
@@ -58,6 +62,17 @@ class Student extends Person {
     }
 }
 
+class Instructor extends Person{
+
+    constructor(name, classes){
+        super(name);
+        this.classes = classes;
+    }
+    speak(){
+        return 'instructor speaking';
+    }
+}
+
 let p1 = new Person('krishna');
 console.log('person ',p1.toString());
 
@@ -66,3 +81,8 @@ console.log('student with name and id ',s1.toString());
 
 let s2 = new Student('ash');
 console.log('student with only name and NO id ', s2.toString());
+
+let i1 = new Instructor('avi', ['f3', 'f2']);
+console.log(i1);
+
+// finish learning inheritance
