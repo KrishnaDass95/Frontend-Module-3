@@ -1,6 +1,8 @@
 console.log('oops2');
 
-// 
+// Private variable
+// you need private variables to hide some variables and also for security of variables
+// the best version of software is the one that is compatible with most softwares
 class Bank{
     #accountNumber;
 
@@ -34,6 +36,33 @@ console.log('private variable using a public function to retrieve it', myAccount
 
 // Inheritence
 
-class person {
-    constructor()
+class Person {
+    constructor(name){
+        this.name = name;
+    }
+    // method to return the the name of person
+    toString(){
+        return `The name of the person is ${this.name}`;
+    }
 }
+
+class Student extends Person {
+    
+    constructor(name, id){
+        super(name);
+        this.id = id;
+    }
+    //Method to return the students name and ID
+    toString(){
+        return `the name of student is ${this.name} and id of the student is ${this.id}`;
+    }
+}
+
+let p1 = new Person('krishna');
+console.log('person ',p1.toString());
+
+let s1 = new Student('Anko', 200);
+console.log('student with name and id ',s1.toString());
+
+let s2 = new Student('ash');
+console.log('student with only name and NO id ', s2.toString());

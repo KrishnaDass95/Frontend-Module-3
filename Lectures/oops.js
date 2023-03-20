@@ -2,6 +2,8 @@ console.log('OOPS');
 // Object oriented programming, an object is an instance of a class
 // a class enapsulates , a language which is oriented to OOPS has 4 principles -> encapsulation, abstraction, inheritance and polymorphism
 
+
+// Way 1 of storing data for a user
 // var user_1_name = 'kd';
 // var user_1_email = 'kk@lald.com';
 // var user_1_phone = '12330000';
@@ -16,7 +18,7 @@ console.log('OOPS');
 // not uniform
 // everything that's made 
 
-// another way to make objects, lot of ways to do a task
+// another way to make objects, lot of ways to do a task, way 2
 var user1  = {
     name: 'kd',
     email: 'krishna@sadas..com',
@@ -26,7 +28,7 @@ var user1  = {
 }
 console.log('user1>>', user1);
 
-// another way of doing it, this is better than above
+// another way of doing it, this is better than above , Way 3
 // also known as a factory function apparently
 function CreateUser(myName, myEmail, myPhone, myUsername, myPassword){
     return {
@@ -41,7 +43,7 @@ function CreateUser(myName, myEmail, myPhone, myUsername, myPassword){
 var user2 = CreateUser('kd', 'email','2121', 'kdkdd', 'asdaddsda');
 console.log('user2>>', user2);
 
-// third and best way to do it
+// Fourth and best way to do it
 
 class User {
     constructor(myName, myEmail, myPhone, myUsername, myPassword){
@@ -65,6 +67,7 @@ class Dog{
         this.color = color;
         this.height = height;
     }
+    // IMP -> INSIDE CLASSES, THE FUNCTION NAMES DO NOT NEED FUNCTION KEYWORD 
     giveDetails(){
         return `the breed of the dog is ${this.breed} and the color is ${this.color}`
     }
@@ -79,9 +82,6 @@ console.log(billy.giveDetails());
 //lets log the object of dog billy
 console.log('billy object of class dog>>', billy);
 
-// Private variable
-// you need private variables to hide some variables and also for security of variables
-// the best version of software is the one that is compatible with most softwares
 
 
 

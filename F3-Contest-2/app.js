@@ -14,7 +14,7 @@ function PromiseAPI1(){
                         console.log('posts object from fetch', data);
                         posts = data.posts;
                         console.log('individual posts', posts);
-                        // go through data and show on UI
+                        // go through data and show on UI`
                         const tableRows = posts.map((post)=>{
                             return `
                             <tr>
