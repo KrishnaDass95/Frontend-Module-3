@@ -64,3 +64,7 @@ loginButton.addEventListener('click', login);
 if(localStorage.getItem('email') && localStorage.getItem('password')){
     window.location.href = './profile.html'
 }
+
+// So technically authentication is stored on local storage
+// and then the browser checks that and the script is able to direct you to the pages you need to go
+
