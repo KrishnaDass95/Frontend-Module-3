@@ -41,4 +41,20 @@ const child = {
 }
 console.log(child.speak()); // parental speaking
 
-// 
+// Real life example
+
+
+const indianMetro = {
+    lines: function(){
+        return 'creating lines'
+    }
+}
+const bloreMetro = {
+    name: 'namma metro',
+    __proto__ : indianMetro
+}
+const mumbaiMetro = {
+    name: 'bombay',
+    __proto__: indianMetro
+}
+console.log(mumbaiMetro);
