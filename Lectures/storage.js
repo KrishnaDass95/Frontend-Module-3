@@ -1,3 +1,7 @@
+// Problem statement -> Store the information of someone who has 
+// logged in, it should be saved if your tab is closed or google chrome and my laptop
+
+
 /** What is storage?
  * Storage, generally why do companies want to track 
  * A company will have big headache if they have to store data like how users are logged in etc
@@ -32,3 +36,31 @@
 // }
 
 
+// First step -> Access values from inputs and make login function
+// Second step -> In the login function store the value from person X
+// third step ->  next time when user comes, show that the person has previously logged in(like laptop or tab closed)
+
+let loginButton = document.getElementById('login_btn');
+
+function login(){
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    console.log('email entered', email);
+    console.log('email entered', password);
+
+    // logic to save the data, this will store the email and password
+    // to the browser using localStorage.setItem
+    // this will store all the data. It stores the data as key-value pairs
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+    // alert('email and password stored');
+    // use localStorage.getItem 
+    document.getElementById('emailP').textContent = localStorage.getItem('email');
+    window.location.href = './profile.html'
+}
+
+loginButton.addEventListener('click', login);
+// console.log('local storage email', loca);
+if(localStorage.getItem('email') && localStorage.getItem('password')){
+    window.location.href = './profile.html'
+}
