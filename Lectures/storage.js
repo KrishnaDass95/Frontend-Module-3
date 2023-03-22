@@ -1,6 +1,8 @@
 // Problem statement -> Store the information of someone who has 
 // logged in, it should be saved if your tab is closed or google chrome and my laptop
 
+const { stringify } = require("querystring");
+
 
 /** What is storage?
  * Storage, generally why do companies want to track 
@@ -10,6 +12,7 @@
  *  Sometimes when you disconnect internet, you can work offline,
  * like youtube videos we download, are stored inside the application
  * including the history of a website etc
+ * You can ony store strings in local storage
  */
 
 /**
@@ -42,11 +45,24 @@
 
 let loginButton = document.getElementById('login_btn');
 
+
 function login(){
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
+    // its annoying to do email , password and many fields
+    // we can add that to an object, based on OOPS
     console.log('email entered', email);
     console.log('email entered', password);
+    let userObj = {
+        userEmail : email,
+        userPassword : password
+    };
+    let userStringify = JSON.stringify(userObj)
+    localStorage.setItem('user', userStringify);
+
+    let jsonObject = JSON.parse(userStringify);
+    localStorage.getItem('userObj', )
+
 
     // logic to save the data, this will store the email and password
     // to the browser using localStorage.setItem
@@ -67,4 +83,7 @@ if(localStorage.getItem('email') && localStorage.getItem('password')){
 
 // So technically authentication is stored on local storage
 // and then the browser checks that and the script is able to direct you to the pages you need to go
+
+
+// In real life to handle multiple users, they  add a users array to keep track of multiple users
 
