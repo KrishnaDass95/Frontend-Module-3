@@ -24,6 +24,8 @@ function showPosition(position){
     // lets set it to local storage
     setDataToLocalStorage(latitude, longitude);
     embedGoogleMaps(latitude, longitude);
+    getLocationButton.disabled = true;
+    removeLocationButton.disabled = false;
 
 }
 
@@ -37,8 +39,11 @@ function getLocation(){
     }
 }
 
+
 getLocationButton.addEventListener('click', getLocation);
 removeLocationButton.addEventListener('click', ()=>{
     embedGoogleMaps(0, 0);
     setDataToLocalStorage('', '');
+    getLocationButton.disabled = false;
+    removeLocationButton.disabled = true;
 })
