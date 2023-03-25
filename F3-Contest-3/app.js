@@ -4,7 +4,7 @@ const removeLocationButton = document.querySelector('#remove-location');
 
 function embedGoogleMaps(lat, long){
     mapDiv.innerHTML = `<iframe src="https://maps.google.com/maps?q=${lat}, 
-    ${long}&output=embed" width="360" height="270" frameborder="0" 
+    ${long}&output=embed"  frameborder="0" 
     style="border:0"></iframe>`
     removeLocationButton.style.display = 'block';
     
