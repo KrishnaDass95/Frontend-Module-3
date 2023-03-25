@@ -38,3 +38,7 @@ function getLocation(){
 }
 
 getLocationButton.addEventListener('click', getLocation);
+removeLocationButton.addEventListener('click', ()=>{
+    embedGoogleMaps(0, 0);
+    setDataToLocalStorage('', '');
+})
