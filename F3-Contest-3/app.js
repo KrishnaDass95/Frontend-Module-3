@@ -39,6 +39,21 @@ function getLocation(){
     }
 }
 
+// FINISH THE LOCAL STORAGE SECTION WITH TRY AND CATCH BLOCK
+try{
+    const lat = localStorage.getItem('lat');
+    const long = localStorage.getItem('long');
+    if(localStorage.getItem('lat') && localStorage.getItem('long')){
+        embedGoogleMaps(lat, long);
+        getLocationButton.disabled = true;
+    }
+}
+catch(error){
+    console.log('lat and long not set in local storage');
+
+}
+
+
 
 getLocationButton.addEventListener('click', getLocation);
 removeLocationButton.addEventListener('click', ()=>{
